@@ -21,15 +21,7 @@ class BookCase extends Component {
     })
   }
 
-  // componentDidMount() {
-  //   BooksAPI.getAll()
-  //     .then(results => {
-
-  //       results.forEach(book) => { }
-  //       // console.log(books);
-  //       this.setState({ allBooks: books })
-  //   })
-  // }
+  onShelfUpdate(book, shelfName) {}
 
   render() {
     return (
