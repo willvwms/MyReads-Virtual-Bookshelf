@@ -14,16 +14,20 @@ class Search extends Component {
 
 	render() {
 
-		{books, query} = this.state
+		const {books, query} = this.state
 
 		return(
 
-			<PageTitle pageTitle={"Search for a Book"} />
-			// HTML
-			<div> This is a placeholder DIV for the Search feature </div>
+		    <div className="search-page">
+				<PageTitle pageTitle={"Search for a Book"} />
+				// HTML here
+		        <div className="open-search">
+		          <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
+		        </div>
+		    </div>
 		)
 	}
 
 }
 
-
+export default Search
