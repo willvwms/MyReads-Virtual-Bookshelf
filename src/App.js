@@ -1,8 +1,8 @@
 import React from 'react'
-import * as BooksAPI from './BooksAPI'
 import './App.css'
 import { Switch, Route } from 'react-router'
 import Home from './Components/Home'
+import Search from './Components/Search'
 
 class App extends React.Component {
   // state = {
@@ -11,7 +11,7 @@ class App extends React.Component {
   //    * we're on, use the URL in the browser's address bar. This will ensure that
   //    * users can use the browser's back and forward buttons to navigate between
   //    * pages, as well as provide a good URL they can bookmark and share.
-     
+
   //   showSearchPage: false
   // }
 
@@ -20,7 +20,7 @@ class App extends React.Component {
       <div className="app">
         <Switch>
           <Route exact path="/" component={Home} />
-{/*          <Route path="/search" component={Search} />*/}
+          <Route path="/search" component={Search} />
         </Switch>
       </div>
     )

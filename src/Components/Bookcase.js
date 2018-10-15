@@ -31,7 +31,7 @@ class BookCase extends Component {
 
     const { allBooks } = this.state
 
-    const index = allBooks.findIndex ( param => param.id === book.id )
+    const index = allBooks.findIndex ( item => item.id === book.id )
 
     const updateBook = allBooks[index]
 
@@ -47,16 +47,16 @@ class BookCase extends Component {
 
     const shelves = [
       {
-        name: "Finished reading",
-        books: allBooks.filter(book => book.shelf ==='read' )
-      },
-      {
         name: "Currently Reading",
         books: allBooks.filter(book => book.shelf ==='currentlyReading' )
       },
       {
         name: "Want to Read",
         books: allBooks.filter(book => book.shelf ==='wantToRead' )
+      },
+      {
+        name: "Finished reading",
+        books: allBooks.filter(book => book.shelf ==='read' )
       }
     ]
 
@@ -64,6 +64,10 @@ class BookCase extends Component {
 
       <div className="list-books">
         <div className="list-books-content">
+
+          {allBooks.forEach(element => {
+  console.log(JSON.stringify(element, null, 2))
+})}
 
           {shelves && shelves.map(
             (shelf, index) => (
@@ -80,3 +84,4 @@ class BookCase extends Component {
 }
 
 export default BookCase
+

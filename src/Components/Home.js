@@ -8,7 +8,7 @@ import PageTitle from './PageTitle'
 const Home = (props) => {
   return (
     <div className="main-page">
-	<PageTitle pageTitle={"Home (My Bookcase)"} />
+	<PageTitle pageTitle={"Bookcase"} />
     <BookCase />
 {/*      <AddBook />*/}
     </div>
