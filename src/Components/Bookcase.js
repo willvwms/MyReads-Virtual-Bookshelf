@@ -20,9 +20,9 @@ class BookCase extends Component {
 
     BooksAPI.getAll()
 
-      .then(books => {
+      .then(bookData => {
 
-        this.setState({ allBooks: books })
+        this.setState({ allBooks: bookData })
 
       })
   }
@@ -65,9 +65,7 @@ class BookCase extends Component {
       <div className="list-books">
         <div className="list-books-content">
 
-          {allBooks.forEach(element => {
-  console.log(JSON.stringify(element, null, 2))
-})}
+          {allBooks.forEach(element => {console.log(JSON.stringify(element, null, 2))} ) }
 
           {shelves && shelves.map(
             (shelf, index) => (

@@ -7,7 +7,6 @@ class Book extends Component {
 
 		return (
 
-			//HTML Here
 			<li>
 				<div className="book">
 				  <div className="book-top">
@@ -22,20 +21,24 @@ class Book extends Component {
 
 				    <div className="book-shelf-changer">
 
-				      <select>
-				        <option value="move" disabled>Move to...</option>
+				      <select value={book.shelf} onChange={ event => onShelfUpdate(book, event.target.value) } >
+
+				        <option value="move">Move to...</option>
 				        <option value="currentlyReading">Currently Reading</option>
 				        <option value="wantToRead">Want to Read</option>
 				        <option value="read">Read</option>
 				        <option value="none">None</option>
+
 				      </select>
 
 				    </div>
 
 				  </div>
+
 				  <div className="book-title">{book.title}</div>
-				  <div className="book-authors">{book.publishedDate.substring(0, 4)}</div>
+				  <div className="book-year">{book.publishedDate.substring(0, 4)}</div>
 				  <div className="book-authors">{book.authors.join(", ")}</div>
+
 				</div>
 			</li>
 
