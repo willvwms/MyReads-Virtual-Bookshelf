@@ -3,11 +3,9 @@ import Book from './Book'
 
 class Shelf extends Component {
 
-	const {title, books, onShelfUpdate} = this.props
+	// const {title, books, onShelfUpdate} = this.props
 
 	render() {
-
-		const {title, books, onShelfUpdate} = this.props
 
 	  	return(
 
@@ -17,7 +15,7 @@ class Shelf extends Component {
                 <ol className="books-grid">
 
 					<Book title="Book.js Title" author="Book.js Author" />
-                  // <li>
+                  {// <li>
                   //   <div className="book">
                   //     <div className="book-top">
                   //       <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: 'url("http://books.google.com/books/content?id=PGR2AwAAQBAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE73-GnPVEyb7MOCxDzOYF1PTQRuf6nCss9LMNOSWBpxBrz8Pm2_mFtWMMg_Y1dx92HT7cUoQBeSWjs3oEztBVhUeDFQX6-tWlWz1-feexS0mlJPjotcwFqAg6hBYDXuK_bkyHD-y&source=gbs_api")' }}></div>
@@ -54,7 +52,7 @@ class Shelf extends Component {
                   //     <div className="book-authors">Orson Scott Card</div>
                   //   </div>
                   // </li>
-
+				}
 
                 </ol>
               </div>
@@ -62,6 +60,7 @@ class Shelf extends Component {
 
 	  	)
 
+	}
 }
 
 export default Shelf

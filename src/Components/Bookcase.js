@@ -1,28 +1,44 @@
 import React, { Component } from 'react'
-// import Shelf from './Shelf'
+import Shelf from './Shelf'
 import * as BooksAPI from '../BooksAPI'
 
 class BookCase extends Component {
 
-  state = {
-    allBooks: []
+  constructor(props) {
+    super(props);
+    this.state = {allBooks: []};
   }
+
+  // state = {
+  //   allBooks: []
+  // }
 
   componentDidMount() {
     BooksAPI.getAll()
       .then(books => {
+        // console.log(books);
         this.setState({ allBooks: books })
     })
   }
+
+  // componentDidMount() {
+  //   BooksAPI.getAll()
+  //     .then(results => {
+
+  //       results.forEach(book) => { }
+  //       // console.log(books);
+  //       this.setState({ allBooks: books })
+  //   })
+  // }
 
   render() {
     return (
 
       <div className="list-books">
 
-      console.log(allBooks)
+        <div>{this.state.allBooks.forEach( element => {console.log(element)} ) } </div>
 
-        // <div className="list-books-content">
+        {// <div className="list-books-content">
         //   <div>
 
         //     <div className="bookshelf">
@@ -193,15 +209,9 @@ class BookCase extends Component {
         //         </ol>
         //       </div>
         //     </div>
-
+        }
       </div>
-// </div>
 
-        // <div className="open-search">
-        //   <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
-        // </div>
-
-//</div>
     )
   }
 
