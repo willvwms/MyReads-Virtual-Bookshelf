@@ -37,6 +37,9 @@ class BookCase extends Component {
 
     updateBook.shelf = shelfName
 
+    this.setState({ // Need to update local state here! Figure out how to update the shelf immediately
+    })
+
     BooksAPI.update(book, shelfName)
 
   }
@@ -82,4 +85,3 @@ class BookCase extends Component {
 }
 
 export default BookCase
-
