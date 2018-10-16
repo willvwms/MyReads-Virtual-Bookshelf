@@ -37,12 +37,26 @@ class BookCase extends Component {
 
     updateBook.shelf = shelfName
 
-    this.setState({ // Need to update local state here! Figure out how to update the shelf immediately
-    })
+    let refreshedCollection = this.state.allBooks.filter(book => book.id !== updateBook.id)
 
-    BooksAPI.update(book, shelfName)
+  	refreshedCollection.push(updateBook) 
+
+      this.setState({
+      	allBooks : refreshedCollection
+      })
 
   }
+
+  addBookTo = (selectedBook, toShelf) => {
+    BooksAPI.update(selectedBook, toShelf).then(response => {
+      // selectedBook.shelf = toShelf /** update the book shelf */
+      let newBooks = this.state.allBooks.filter(book =>
+        book.id !== selectedBook.id) /** filter out the book if present in allBooks */
+      newBooks.push(selectedBook) /* push the updated book */
+      this.setState({ allBooks: newBooks }) /** update the app state */
+    })
+  }
+
 
   render() {
 
