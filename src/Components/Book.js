@@ -5,6 +5,9 @@ class Book extends Component {
 	render(){
 		const {book, onShelfUpdate} = this.props
 
+		// console.log(JSON.stringify(book))
+		// console.log(JSON.stringify(onChange))
+
 		return (
 
 			<li>
@@ -21,7 +24,7 @@ class Book extends Component {
 
 				    <div className="book-shelf-changer">
 
-				      <select value={book.shelf} onChange={ event => onShelfUpdate(book, event.target.value) } >
+				      <select value={book.shelf} onShelfUpdate={ event => onShelfUpdate(book, event.target.value) } >
 
 				        <option value="move" disabled>Move to...</option>
 				        <option value="currentlyReading">Currently Reading</option>

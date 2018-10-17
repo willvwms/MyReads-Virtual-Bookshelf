@@ -39,7 +39,7 @@ class BookCase extends Component {
 
     let refreshedCollection = this.state.allBooks.filter(book => book.id !== updateBook.id)
 
-  	refreshedCollection.push(updateBook) 
+  	refreshedCollection.push(updateBook)
 
       this.setState({
       	allBooks : refreshedCollection
@@ -47,20 +47,20 @@ class BookCase extends Component {
 
   }
 
-  addBookTo = (selectedBook, toShelf) => {
-    BooksAPI.update(selectedBook, toShelf).then(response => {
-      // selectedBook.shelf = toShelf /** update the book shelf */
-      let newBooks = this.state.allBooks.filter(book =>
-        book.id !== selectedBook.id) /** filter out the book if present in allBooks */
-      newBooks.push(selectedBook) /* push the updated book */
-      this.setState({ allBooks: newBooks }) /** update the app state */
-    })
-  }
+  // addBookTo = (selectedBook, toShelf) => {
+  //   BooksAPI.update(selectedBook, toShelf).then(response => {
+  //     // selectedBook.shelf = toShelf /** update the book shelf */
+  //     let newBooks = this.state.allBooks.filter(book =>
+  //       book.id !== selectedBook.id) /** filter out the book if present in allBooks */
+  //     newBooks.push(selectedBook) /* push the updated book */
+  //     this.setState({ allBooks: newBooks }) /** update the app state */
+  //   })
+  // }
 
 
   render() {
 
-    const { allBooks } = this.state
+    const { allBooks, onShelfUpdate } = this.state
 
     const shelves = [
       {
@@ -86,7 +86,7 @@ class BookCase extends Component {
 
           {shelves && shelves.map(
             (shelf, index) => (
-              <Shelf key={index}  title={shelf.name} books={shelf.books} onShelfUpdate={this.onShelfUpdate}/>
+              <Shelf key={index} title={shelf.name} books={shelf.books} onShelfUpdate={this.onShelfUpdate}/>
               )
             )
           }
